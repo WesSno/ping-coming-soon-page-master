@@ -35,7 +35,8 @@ notificationBtn.addEventListener("click", (e) => {
   errorMessages();
 });
 
-notificationBtn.addEventListener("touchstart", () => {
+notificationBtn.addEventListener("touchend", (e) => {
+  e.preventDefault();
   errorMessages();
   notificationBtn.style.backgroundColor = "white";
   notificationBtn.style.outline = "1px solid" + " " + paleBlue;
