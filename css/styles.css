@@ -55,7 +55,7 @@ span {
   display: flex;
   flex-wrap: wrap;
   width: 89%;
-  gap: 0.7rem;
+  gap: 0.3rem;
   align-self: center;
   margin-bottom: 4rem;
 }
@@ -102,17 +102,26 @@ span {
   display: none;
   margin: 0 auto;
   width: 100%;
-  font-weight: 600;
+  font-weight: 400;
   color: var(--light-red);
   font-size: 1rem;
+  margin-top: 0.2rem;
 }
 
 #error-message1 {
   text-align: center;
 }
 
+#error-message2 {
+  margin-left: 1.1rem;
+}
+
 #notification-form span.display {
   display: block;
+}
+
+.delayed-display {
+  transition: 0.3s ease;
 }
 
 .dash-img {

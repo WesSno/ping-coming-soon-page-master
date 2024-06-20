@@ -1,9 +1,10 @@
 const rootStyles = getComputedStyle(document.documentElement);
 const lightRed = rootStyles.getPropertyValue("--light-red").trim();
-const paleBlue = rootStyles.getPropertyValue("--pale-blue");
+const paleBlue = rootStyles.getPropertyValue("--pale-blue").trim();
+const blue = rootStyles.getPropertyValue("--blue").trim();
+const notificationBtn = document.getElementById("notify-btn");
 
-document.getElementById("notify-btn").addEventListener("click", (e) => {
-  e.preventDefault();
+function errorMessages() {
   const emailInput = document.getElementById("email");
   const errorMessageOne = document.getElementById("error-message1");
   const errorMessageTwo = document.getElementById("error-message2");
@@ -12,6 +13,7 @@ document.getElementById("notify-btn").addEventListener("click", (e) => {
 
   if (emailRegex.test(emailValue)) {
     errorMessageOne.textContent = "";
+    errorMessageOne.style.marginBottom = "0rem";
     errorMessageTwo.textContent = "";
     alert("You have been subscribed");
     emailInput.value = "";
@@ -26,6 +28,26 @@ document.getElementById("notify-btn").addEventListener("click", (e) => {
       emailInput.style.border = "1px solid" + " " + lightRed;
     }
   }
+}
+
+notificationBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  errorMessages();
+});
+
+notificationBtn.addEventListener("touchstart", () => {
+  errorMessages();
+  notificationBtn.style.backgroundColor = "white";
+  notificationBtn.style.outline = "1px solid" + " " + paleBlue;
+  notificationBtn.style.color = blue;
+  notificationBtn.style.opacity = "1";
+
+  setTimeout(() => {
+    notificationBtn.style.transition = ".2s ease";
+    notificationBtn.style.backgroundColor = blue;
+    notificationBtn.style.color = "white";
+    notificationBtn.style.outline = "none";
+  }, 1000);
 });
 
 function displayErrorMessages(x) {
