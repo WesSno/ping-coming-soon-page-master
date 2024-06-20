@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue: hsl(223, 87%, 63%);
+  --pale-blue: hsl(223, 100%, 88%);
+  --light-red: hsl(354, 100%, 66%);
+  --gray: hsl(0, 0%, 59%);
+  --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0px 2rem;
+}
+
+.logo {
+  margin: 8rem 0 3rem 0;
+}
+
+.logo img {
+  width: 100%;
+}
+
+h1 {
+  text-decoration: none;
+  font-size: clamp(1.7rem, 5vw, 3rem);
+  font-weight: 300;
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+span {
+  font-weight: 700;
+  color: var(--very-dark-blue);
+}
+
+.subscribe {
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  color: var(--very-dark-blue);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+#notification-form {
+  display: flex;
+  flex-wrap: wrap;
+  width: 89%;
+  gap: 0.7rem;
+  align-self: center;
+  margin-bottom: 4rem;
+}
+
+#email {
+  align-self: center;
+  flex-grow: 3;
+  border-radius: 30px;
+  border: 1px solid var(--pale-blue);
+  padding: 1.1rem;
+}
+
+#email:focus {
+  border: 1px solid var(--blue);
+  outline: none;
+}
+
+#email::placeholder {
+  color: var(--pale-blue);
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+  font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+#notification-form button {
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  flex-grow: 1;
+  padding: 1rem;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--blue);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 10px 0px var(--pale-blue);
+  transition: opacity 0.2s ease;
+}
+
+#notification-form button:hover {
+  opacity: 0.7;
+}
+
+.error-message {
+  font-style: italic;
+  display: none;
+  margin: 0 auto;
+  width: 100%;
+  font-weight: 600;
+  color: var(--light-red);
+  font-size: 1rem;
+}
+
+#error-message1 {
+  text-align: center;
+}
+
+#notification-form span.display {
+  display: block;
+}
+
+.dash-img {
+  width: 100%;
+  align-self: center;
+}
+
+.dash-img img {
+  width: 100%;
+}
+
+footer {
+  margin: 5rem 0 2rem 0;
+  align-self: center;
+}
+
+footer ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+footer ul li {
+  list-style-type: none;
+}
+
+footer ul li a {
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--blue);
+  border: 1px solid var(--pale-blue);
+  border-radius: 100%;
+  padding: 0.7rem;
+  width: 40.38px;
+  margin-bottom: 2rem;
+}
+
+footer ul li a:hover {
+  border: 1px solid var(--blue);
+  background-color: var(--blue);
+  color: #fff;
+}
+
+footer p {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  font-weight: 300px;
+  color: var(--gray);
+}
